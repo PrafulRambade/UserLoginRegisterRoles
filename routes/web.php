@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminCOntroller;
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,8 @@ Route::group(['prefix'=>'admin','middleware'=>'isAdmin','auth'],function(){
     Route::get('dashboard',[AdminCOntroller::class,'index'])->name('admin.dashboard');
     Route::get('profile',[AdminCOntroller::class,'profile'])->name('admin.profile');
     Route::get('setting',[AdminCOntroller::class,'setting'])->name('admin.setting');
+    Route::get('companies',[CompanyController::class,'companies'])->name('admin.companies');
+    Route::post('company_add',[CompanyController::class,'companyAdd'])->name('admin.companies');
 });
 
 ROute::group(['prefix'=>'user','middleware'=>'isUser','auth'],function(){
