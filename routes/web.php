@@ -33,6 +33,8 @@ Route::group(['prefix'=>'admin','middleware'=>'isAdmin','auth'],function(){
     Route::get('setting',[AdminCOntroller::class,'setting'])->name('admin.setting');
     Route::get('companies',[CompanyController::class,'companies'])->name('admin.companies');
     Route::post('company_add',[CompanyController::class,'companyAdd'])->name('admin.companies');
+    Route::post('user_add',[UserController::class,'userAdd'])->name('admin.useradd');
+    Route::get('users',[UserController::class,'Users'])->name('admin.users');
 });
 
 ROute::group(['prefix'=>'user','middleware'=>'isUser','auth'],function(){
