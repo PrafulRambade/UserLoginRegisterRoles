@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8"; /*!
+/*@charset "UTF-8"; /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
@@ -324,6 +324,9 @@ th {
   text-align: inherit;
   text-align: -webkit-match-parent;
 }
+table{
+  width:100%;
+}
 
 thead,
 tbody,
@@ -331,9 +334,10 @@ tfoot,
 tr,
 td,
 th {
+  padding: 10px 15px;
   border-color: inherit;
   border-style: solid;
-  border-width: 0;
+  border-width: 1px;
 }
 
 label {

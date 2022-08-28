@@ -38,7 +38,7 @@ Route::group(['prefix'=>'admin','middleware'=>'isAdmin','auth'],function(){
     Route::post('user_add',[UserController::class,'userAdd'])->name('admin.useradd');
     Route::get('users',[UserController::class,'Users'])->name('admin.users');
     Route::get('author_add',[AuthorController::class,'save'])->name('admin.author_add');
-    Route::get('post_add/{id}',[PostController::class,'save'])->name('admin.post_add');
+    Route::get('post_add',[PostController::class,'save'])->name('admin.post_add');
     Route::get('post_index',[PostController::class,'index'])->name('admin.post_index');
 });
 

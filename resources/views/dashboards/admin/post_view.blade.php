@@ -13,13 +13,16 @@
                             <td>Name</td>
                             <td>Category</td>
                             <td>Author</td>
+                            <td colspan="2" style="text-align: center">Action</td>
                         </tr>
                         @foreach($data as $post)
                         <tr>
                         
                             <td>{{$post->name}}</td>
                             <td>{{$post->cat}}</td>
-                            <td>{{$post->author->username}}</td>
+                            <td>{{$post->user->name}}</td>
+                            <td><a href="edit_post/{{$post->id}}">Edit</a></td>
+                            <td><a href="delete_post/{{$post->id}}">Delete</a></td>
                         </tr>
                         @endforeach
                         

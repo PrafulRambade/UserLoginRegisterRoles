@@ -18,8 +18,10 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('cat');
             $table->timestamps();
-            $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')->references('id')->on('authors');
+            // $table->unsignedBigInteger('author_id')->default(1);
+            $table->unsignedBigInteger('user_id');
+            // $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
