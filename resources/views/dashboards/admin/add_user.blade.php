@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Create Company') }}</div>
+                <div class="card-header">{{ __('Create User') }}</div>
 
                 <div class="card-body">
                     {{ Form::open(array('url'=>'admin/user_add' ,'class' => 'form-horizontal', 'id'=>'todoForm','method'=>'POST')) }}

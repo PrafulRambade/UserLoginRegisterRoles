@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminCOntroller;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,9 @@ Route::group(['prefix'=>'admin','middleware'=>'isAdmin','auth'],function(){
     Route::post('company_add',[CompanyController::class,'companyAdd'])->name('admin.companies');
     Route::post('user_add',[UserController::class,'userAdd'])->name('admin.useradd');
     Route::get('users',[UserController::class,'Users'])->name('admin.users');
+    Route::get('author_add',[AuthorController::class,'save'])->name('admin.author_add');
+    Route::get('post_add/{id}',[PostController::class,'save'])->name('admin.post_add');
+    Route::get('post_index',[PostController::class,'index'])->name('admin.post_index');
 });
 
 ROute::group(['prefix'=>'user','middleware'=>'isUser','auth'],function(){
